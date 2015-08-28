@@ -3,13 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
-#GET     /user/entry       controllers.UserController.entryInit
-#POST    /user/entry       controllers.UserController.entrySubmit
-GET     /find             controllers.UserController.find
-GET     /findAll             controllers.UserController.findAll
-GET     /create           controllers.UserController.create
-GET     /destroy         controllers.UserController.destroy
+GET     /       controllers.UserController.findAll
+GET     /entry      controllers.UserController.entry
+POST    /create     controllers.UserController.create
+GET     /destroy         controllers.UserController.destroy(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

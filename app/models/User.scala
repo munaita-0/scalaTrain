@@ -47,7 +47,7 @@ object User extends SQLSyntaxSupport[User] {
   }
 
   def destroy(id: Long)(implicit session: DBSession = autoSession): Unit = withSQL {
-    delete.from(User).where.eq(User.column.id, 2)
+    delete.from(User).where.eq(User.column.id, id)
   }.update.apply()
 
   //  def edit(id: Long, name: Option[String], email: Option[String], password: Option[String])(implicit session: DBSession = autoSession): User = withSQL {

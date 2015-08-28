@@ -1,0 +1,19 @@
+@(entryForm: Form[EntryForm])
+@import helper._
+@main("ユーザーの登録画面") {
+@helper.form(action = routes.UserController.create) {
+<fieldset>
+    <legend>ユーザー情報</legend>
+    <div>
+        <input type="text" name="name" />名前
+    </div>
+    <div>
+        <input type="text" name="email" />email
+    </div>
+    <div>
+        <input type="text" name="password" />パスワード
+    </div>
+</fieldset>
+<input type="submit" value="登録">
+}
+}

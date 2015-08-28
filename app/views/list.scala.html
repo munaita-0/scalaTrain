@@ -1,0 +1,16 @@
+@(userList:List[User])
+@main("ユーザーリスト一覧画面") {
+<h1>ユーザーリスト</h1>
+    <table border="1" cellpadding="5" cellspacing="0">
+        @for(user <- userList) {
+            <tr>
+                <td>@user.name</td>
+                <td>@user.email</td>
+                <td>@user.password</td>
+                <td><a href="../destroy?id=@user.id">削除</a></td>
+            </tr>
+        }
+    </table>
+
+<input type="button" onclick="location.href='../entry'"value="登録画面">
+}
